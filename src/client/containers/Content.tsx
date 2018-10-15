@@ -18,15 +18,13 @@ PanelStyle = PanelStyle.extend`
 `
 
 TabStyle = TabStyle.extend`
-  height: 25px;
+  height: 40px;
   min-width: 70px;
   margin-left: 8px;
   margin-right: 8px;
-  padding: 7px;
   border: 2px solid ${primaryRed};
-  border-radius: 25px;
+  border-radius: 40px;
   text-align: center;
-  line-height: 25px;
 `
 
 const customStyle: object = {
@@ -43,7 +41,7 @@ class Content extends React.Component {
         customStyle={customStyle}
       >
         <TabList>
-          <Tab>HomePage</Tab>
+          <Tab closable={true}>HomePage</Tab>
         </TabList>
         <PanelList>
           <Panel>
@@ -57,12 +55,6 @@ class Content extends React.Component {
   handleExtraButton () {
     // const { tabs } = this.state
   }
-}
-
-function loadContentFunc (cb) {
-  setTimeout(() => {
-    cb(null, null)
-  }, 100)
 }
 
 export default Content

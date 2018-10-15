@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const compression = require('compression')
 const helmet = require('helmet')
+const fs = require('fs')
 
 let PORT = Number(process.argv[2]) || 3000
 
@@ -22,6 +23,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // Routes
+
+// Check if config file exists
+const CONFIG_PATH = './config.json'
+if (!fs.existsSync(CONFIG_PATH)) {
+  const initConfig = {
+    'prefs': {},
+    'extensions': []
+  }
+  fs.writeFile(CONFIG_PATH, JSON.stringify(initConfig))
+}
 
 // Start the server
 app.listen(PORT, () => {

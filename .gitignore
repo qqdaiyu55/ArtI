@@ -23,3 +23,6 @@ yarn.lock
 .yarn-integrity
 
 extensions/
+
+# Config file
+config.json

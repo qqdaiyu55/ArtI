@@ -36,6 +36,9 @@
     "member-access": [
       true,
       "no-public"
-    ]
+    ],
+    "no-var-requires": false,
+    "interface-name": false,
+    "object-literal-sort-keys": false
   }
 }

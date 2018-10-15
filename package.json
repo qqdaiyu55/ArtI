@@ -35,7 +35,7 @@
     "prod-build": "webpack --config webpack.prod.js && npm run prod-scss",
     "dev-scss": "node-sass static/css/app.scss build/app.css",
     "prod-scss": "node-sass --output-style compressed static/css/app.scss build/app.css",
-    "watch": "nodemon --exec \"npm run start\" --ext ts,tsx,js,jsx,css,scss --ignore build/",
+    "watch": "nodemon --exec \"npm run start\" --ext ts,tsx,js,jsx,css,scss --ignore build/ --ignore extensions/",
     "lint": "./node_modules/.bin/tslint -c tslint.json -p tsconfig.json",
     "lint-fix": "./node_modules/.bin/tslint -c tslint.json -p tsconfig.json --fix"
   }
