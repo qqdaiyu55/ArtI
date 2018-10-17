@@ -7,9 +7,12 @@
   "devDependencies": {
     "@types/node": "^10.11.7",
     "awesome-typescript-loader": "^5.2.1",
-    "node-sass": "^4.9.3",
+    "css-loader": "^1.0.0",
+    "node-sass": "^4.9.4",
     "nodemon": "^1.18.4",
+    "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
     "tslint": "^5.11.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.1.1",
@@ -31,11 +34,9 @@
   },
   "scripts": {
     "start": "npm run dev-build && node --use-strict index.js",
-    "dev-build": "webpack --config webpack.dev.js && npm run dev-scss",
-    "prod-build": "webpack --config webpack.prod.js && npm run prod-scss",
-    "dev-scss": "node-sass static/css/app.scss build/app.css",
-    "prod-scss": "node-sass --output-style compressed static/css/app.scss build/app.css",
-    "watch": "nodemon --exec \"npm run start\" --ext ts,tsx,js,jsx,css,scss --ignore build/ --ignore extensions/",
+    "dev-build": "webpack --config webpack.dev.js",
+    "prod-build": "webpack --config webpack.prod.js",
+    "watch": "nodemon --exec \"npm run start\" --ext ts,tsx,js,jsx,css,scss --ignore build/",
     "lint": "./node_modules/.bin/tslint -c tslint.json -p tsconfig.json",
     "lint-fix": "./node_modules/.bin/tslint -c tslint.json -p tsconfig.json --fix"
   }

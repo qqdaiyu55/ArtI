@@ -15,6 +15,7 @@ TabListStyle = TabListStyle.extend`
 
 PanelStyle = PanelStyle.extend`
   background: ${bgColor};
+  padding: 0;
 `
 
 TabStyle = TabStyle.extend`

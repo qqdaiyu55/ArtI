@@ -8,8 +8,9 @@ const Components: object = {}
 config.extensions.forEach(e => {
   // Todo: dynamically require, allow customizing extension entry instead of 'out/extension'
   // But it seems impossible after searching
-  Components[e] = require('../../../extensions/' + e + '/out/extension').default
+  Components[e] = require('../../../extensions/' + e + '/src/extension').default
 })
+
 
 type State = {
   ext: string | undefined
@@ -43,6 +44,7 @@ class Homepage extends React.Component<{}, State> {
     if (ext) {
       const RenderedComponent = Components[ext]
       return <RenderedComponent />
+      // return <Extension />
     } else {
       return config.extensions.map(e => {
         return (
